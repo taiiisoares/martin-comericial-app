@@ -4,6 +4,10 @@ import { THEME } from "../../../styles/theme";
 export const Logo = styled.img`
   width: 10.3rem;
   height: 100%;
+
+  @media (min-width: 750px) {
+    width: 12rem;
+  }
 `;
 
 export const Container = styled.header`
@@ -18,6 +22,14 @@ export const Container = styled.header`
   left: 0;
   z-index: 100;
   overflow-x: hidden;
+
+  @media (min-width: 750px) {
+    height: 8rem;
+  }
+
+  @media (min-width: 1060px) {
+    height: 10rem;
+  }
 `;
 
 export const Menu = styled.div<{ isOpened: boolean; visible: boolean }>`
@@ -57,4 +69,42 @@ export const Menu = styled.div<{ isOpened: boolean; visible: boolean }>`
         transform: rotate(45deg) translateY(-0.5rem);
       }
     `}
+`;
+
+export const WrapperNavItems = styled.div`
+  display: flex;
+  gap: 12rem;
+  padding: 0 5rem;
+
+  @media (min-width: 900px) {
+    gap: 14rem;
+  }
+
+  @media (min-width: 1060px) {
+    gap: 18rem;
+  }
+
+  @media (min-width: 1120px) {
+    padding: 0 15rem;
+  }
+
+  @media (min-width: 1350px) {
+    padding: 0 30rem;
+  }
+`;
+
+export const MenuSideBar = styled.div`
+  display: flex;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+`;
+
+export const ContainerNavBar = styled.div`
+  display: none;
+
+  @media (min-width: 700px) {
+    display: flex;
+  }
 `;
