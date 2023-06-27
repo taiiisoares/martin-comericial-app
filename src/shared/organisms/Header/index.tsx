@@ -25,7 +25,7 @@ export default function Header() {
             let hrefs = item.toLowerCase();
             hrefs = hrefs === "início" ? "" : hrefs;
             return (
-              <NavItem color={THEME.PURPLE} key={index} link={hrefs}>
+              <NavItem color={THEME.PURPLE} key={index} link={`/${hrefs}`}>
                 {item}
               </NavItem>
             );

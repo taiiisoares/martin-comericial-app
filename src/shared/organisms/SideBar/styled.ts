@@ -16,6 +16,10 @@ export const NavList = styled.ul<{ isOpened: boolean }>`
 
   list-style: none;
   opacity: 0.98;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
 `;
 
 export const NavItems = styled.li`
