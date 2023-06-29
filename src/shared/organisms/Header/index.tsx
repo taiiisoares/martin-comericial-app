@@ -3,11 +3,27 @@ import { SideBar } from "../../../context/sidebar";
 import { THEME } from "../../../styles/theme";
 import NavItem from "../../atoms/NavItem";
 import * as S from "./styled";
+import { TranslateLanguage } from "../../../context/translate";
 
 export default function Header() {
   const setOpenedSideBar = useSetRecoilState(SideBar);
   const isOpenedSideBar = useRecoilValue(SideBar);
-  const items = ["Início", "Serviços", "Contatos"];
+  const language = useRecoilValue(TranslateLanguage)
+  let items: string[]
+
+  switch(language) {
+    case 'Brazil':
+      items = ['Início', 'Serviços', 'Contatos']
+      break;
+
+    case 'Usa':
+      items = ['Home', 'Services', 'Contact']
+      break;
+    
+    case 'Spain':
+      items = ['Inicio', 'Servicios', 'Contacto']
+      break;
+  }
 
   return (
     <S.Container>
@@ -21,15 +37,15 @@ export default function Header() {
       </S.MenuSideBar>
       <S.ContainerNavBar>
         <S.WrapperNavItems>
-          {items.map((item, index) => {
-            let hrefs = item.toLowerCase();
-            hrefs = hrefs === "início" ? "" : hrefs;
-            return (
-              <NavItem color={THEME.PURPLE} key={index} link={`/${hrefs}`}>
-                {item}
-              </NavItem>
-            );
-          })}
+          <NavItem color={THEME.PURPLE} link="/">
+            {items[0]}
+          </NavItem>
+          <NavItem color={THEME.PURPLE} link="/servicos">
+            {items[1]}
+          </NavItem>
+          <NavItem color={THEME.PURPLE} link="/contatos">
+            {items[2]}
+          </NavItem>
         </S.WrapperNavItems>
       </S.ContainerNavBar>
     </S.Container>

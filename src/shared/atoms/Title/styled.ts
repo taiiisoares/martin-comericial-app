@@ -10,11 +10,11 @@ export const Title = styled.h1<{ color: THEME; isContact?: boolean }>`
     font-size: 5rem;
   }
 
-  ${(props) =>
+  /* ${(props) =>
     props.isContact &&
     css`
       @media (min-width: 700px) {
         color: ${THEME.WHITE};
       }
-    `}
+    `} */
 `;

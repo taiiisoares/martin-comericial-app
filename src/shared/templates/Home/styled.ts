@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { THEME } from "../../../styles/theme";
 
-export const Container = styled.div`
+export const Container = styled.div<{ isEnglish: boolean }>`
   width: 100%;
   height: max-content;
   padding: 4.5rem 3.7rem;
@@ -28,11 +28,15 @@ export const Container = styled.div`
   @media (min-width: 1366px) {
     height: 215vh;
     background-size: contain;
-    padding: 9rem 35rem;
+    ${ props => props.isEnglish ? css`
+      padding: 20rem 35rem;
+    ` : css`
+      padding: 9rem 35rem;
+    `}
   }
 `;
 
-export const WrapperTexts = styled.div`
+export const WrapperTexts = styled.div<{ isEnglish: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
@@ -47,8 +51,14 @@ export const WrapperTexts = styled.div`
   }
 
   @media (min-width: 1366px) {
-    gap: 13rem;
+    ${ props => props.isEnglish ? css`
+      gap: 17rem;
+    ` : css`
+      gap: 13rem;
+    `}
   }
 `;
 
-export const MotionDiv = styled(motion.div)``;
+export const MotionDiv = styled(motion.div)`
+  text-align: center;
+`;
