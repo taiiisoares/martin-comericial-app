@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { THEME } from "../../../styles/theme";
 
 export const Container = styled.div<{ isEnglish: boolean }>`
@@ -27,12 +27,7 @@ export const Container = styled.div<{ isEnglish: boolean }>`
 
   @media (min-width: 1366px) {
     height: 215vh;
-    background-size: contain;
-    ${ props => props.isEnglish ? css`
-      padding: 20rem 35rem;
-    ` : css`
-      padding: 9rem 35rem;
-    `}
+    padding: 30rem 35rem;
   }
 `;
 
@@ -44,18 +39,6 @@ export const WrapperTexts = styled.div<{ isEnglish: boolean }>`
 
   @media (min-width: 980px) {
     gap: 5rem;
-  }
-
-  @media (min-width: 1145px) {
-    gap: 10rem;
-  }
-
-  @media (min-width: 1366px) {
-    ${ props => props.isEnglish ? css`
-      gap: 17rem;
-    ` : css`
-      gap: 13rem;
-    `}
   }
 `;
 
