@@ -39,6 +39,9 @@ export default function ContactsTemplate({ data }: { data: ContactsProps }) {
   return (
     <>
       <Header />
+      <body>
+      <img src="C:\Users\userlocal\Downloads\martin-comercial-app\src\shared\templates\Banner.jpeg" alt="Banner do Meu Site" width="100%" />
+      </body> 
       <Translator />
       {isOpenedSideBar && <SideBarComponent />}
       <S.Container>

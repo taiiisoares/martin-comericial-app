@@ -1,7 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { TranslateLanguage } from '../../../context/translate';
 import HomeTemplate from '../../templates/Home'
-
+import bannerImage from '../Services/';
 export default function Home() {
   const language = useRecoilValue(TranslateLanguage);
   let title: string;
@@ -40,5 +40,19 @@ export default function Home() {
       ];
       break;
   }
-  return <HomeTemplate data={{ title, texts, english }} />
+  return (
+    <>
+      <svg
+        width="1366"
+        height="1522"
+        viewBox="0 0 1366 1522"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Conteúdo SVG da imagem */}
+        {/* ... */}
+      </svg>
+      <HomeTemplate data={{ title, texts, english }} />
+    </>
+  );
 }
